@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar mode="ios" color="primary">
     <ion-buttons slot="start">
       <ion-back-button routerLink='/movies'></ion-back-button>
     </ion-buttons>
@@ -7,7 +7,8 @@
   </ion-toolbar>
 </ion-header>
  
-<ion-content padding>
+<ion-content padding mode="ios">
+
   <ion-card *ngIf="information">
     <ion-card-header>
       <ion-card-title>
@@ -17,11 +18,13 @@
         {{ information.Year }}
       </ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content text-center>
-      <img [src]="information.Poster" class="info-img">
+
+    <ion-card-content>
+      <img [src]="information.Poster">
+      <hr>
       {{ information.Plot }}
     </ion-card-content>
-
+  
     <ion-card-subtitle>
       <ion-item lines="none">
         <ion-icon name="star-half" slot="start"></ion-icon>
