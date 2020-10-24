@@ -1,0 +1,7 @@
+{
+  "name": "Laboratorul2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

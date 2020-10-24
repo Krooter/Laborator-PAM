@@ -1,0 +1,33 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button (click)="close()">
+      <ion-icon name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button [disabled] (click)="save()">
+      <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="{{eventTitle}}" type="text" [(ngModel)]="newItem.title" (ngModelChange)="eventTitle"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="{{eventDesc}}" type="text"[(ngModel)]="newItem.desc" (ngModelChange)="eventDesc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Start - {{eventStart | date: 'short'}}</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="newItem.startTime"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>End - {{eventEnd | date: 'short'}}</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="newItem.endTime"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>All Day?</ion-label>
+    <ion-checkbox [(ngModel)]="newItem.allDay"></ion-checkbox>
+  </ion-item>
+</ion-content>

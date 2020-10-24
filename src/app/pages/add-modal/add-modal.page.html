@@ -1,0 +1,41 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button (click)="close()">
+      <ion-icon name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Add Event</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="save()">
+      <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-input placeholder="Title" type="text" [(ngModel)]="newItem.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Description" type="text" [(ngModel)]="newItem.desc"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="newItem.startTime"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>End</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="newItem.endTime"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>All Day?</ion-label>
+        <ion-checkbox [(ngModel)]="newItem.allDay"></ion-checkbox>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
