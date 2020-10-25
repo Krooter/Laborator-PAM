@@ -2,6 +2,7 @@ package io.ionic.starter;
 
 import android.os.Bundle;
 
+import com.bkon.capacitor.DarkMode.DarkMode;
 import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
 
@@ -16,6 +17,7 @@ public class MainActivity extends BridgeActivity {
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
       // Additional plugins you've installed go here
       // Ex: add(TotallyAwesomePlugin.class);
+      add(DarkMode.class);
     }});
   }
 }
