@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" style="padding-top: 25px;">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-top: 5%; text-align: center; margin-right: 12%;">Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-thumbnail class="img-wrapper2" (click)="imgPicker()">
+    <ion-img *ngIf="imageResponse == null" src="../../assets/images/register.png"></ion-img>
+  </ion-thumbnail>
+  <ion-thumbnail class="img-wrapper2" (click)="imgPicker()">
+    <ion-img *ngIf="imageResponse == ''" src="../../assets/images/register.png"></ion-img>
+  </ion-thumbnail>
+  <div (click)="imgPicker()">
+    <ion-avatar class="img-wrapper" *ngIf="imageResponse != null && imageResponse != ''">
+      <ion-img src="data:image/jpeg; base64,{{imageResponse}}"></ion-img>
+    </ion-avatar>
+  </div>
+  <form #registerForm="ngForm" (ngSubmit)="register()">
+    <div class="reg-content-first">
+      <ion-label class="reg-label">Full Name</ion-label>
+      <ion-input class="reg-input" placeholder="Your Full Name" required name="FullName" [(ngModel)]="model.FullName"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label" >Password</ion-label>
+      <ion-input class="reg-input" placeholder="Password" name="Password" type="password" [(ngModel)]="model.Password"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label" >Birthdate</ion-label>
+      <ion-datetime class="reg-input" displayFormat="YYYY/MM/DD" placeholder="yy/mm/dd" name="Birthdate" [(ngModel)]="model.Birthday"></ion-datetime>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label" >Email</ion-label>
+      <ion-input class="reg-input" placeholder="Your Email" name="Email" [(ngModel)]="model.Email"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label" >Phone Number</ion-label>
+      <ion-input class="reg-input" placeholder="Your Phone Number" type="tel" name="Phone" [(ngModel)]="model.Phone"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label" >Location/Address</ion-label>
+      <ion-input class="reg-input" placeholder="Your Location" name="Address" [(ngModel)]="model.Address"></ion-input>
+    </div>
+    <ion-button shape="round" style="margin-top: 10%; margin-bottom: 10%;" type="submit" color="primary" expand="full">Next</ion-button>
+  </form>
+</ion-content>

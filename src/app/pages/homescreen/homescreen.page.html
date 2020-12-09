@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary" style="padding-top: 13px;">
+    <ion-buttons slot="end" style="padding-top: 13px; padding-right: 5%" [routerLink]="['/doctor-list']">
+      <ion-icon name="ellipsis-horizontal" style="font-size: 7vw;"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start" style="padding-top: 13px;">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-top: 5%; padding-bottom: 3%; text-align: center;">Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button shape="round" style="margin-top: 10%;" expand="full" fill="outline" [routerLink]="['/homescreen']">Very Urgent</ion-button>
+  <form #addConsultationForm="ngForm" (ngSubmit)="addConsulation()">
+    <div class="reg-content-first">
+      <ion-label class="reg-label">Name</ion-label>
+      <ion-input class="reg-input" placeholder="Your Name" name="Name" [(ngModel)]="model.Name"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label">Disease</ion-label>
+      <ion-input class="reg-input" placeholder="What is your illness" name="Disease" [(ngModel)]="model.Disease"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label">Location</ion-label>
+      <ion-input class="reg-input" placeholder="Where your location" name="Address" [(ngModel)]="model.Address"></ion-input>
+    </div>
+    <div class="reg-content">
+      <ion-label class="reg-label">Discription (Optional)</ion-label>
+      <ion-input class="desc-input" type="text" size="text" multiple="true" placeholder="Describe Here" name="Description" [(ngModel)]="model.Description"></ion-input>
+    </div>
+    <ion-button class="request-button" shape="round" style="margin-top: 10%; margin-bottom: 10%;" color="primary" expand="full" type="submit">Request</ion-button>
+  </form>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="light">
+      <ion-tab-button selected="true" [routerLink]="['/homescreen']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/request']">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger"></ion-badge>
+        <ion-label>Notification</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button>
+        <ion-icon name="none"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button>
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+        <ion-label>Schedule</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/profile']">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

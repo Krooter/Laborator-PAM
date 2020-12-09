@@ -1,0 +1,70 @@
+.img-wrapper {
+    margin-top: 9%;
+    width: 41%;
+    display: block;
+    height: 23vh;
+    margin-left: 29%;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    object-fit: cover !important;
+}
+
+.img-wrapper2 {
+    margin-top: 9%;
+    width: 41%;
+    display: block;
+    height: auto;
+    margin-left: 29%;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    object-fit: cover !important;
+}
+
+.reg-content-first {
+    margin-top: 10%;
+    margin-left: 6%;
+    margin-right: 6%;
+    font-family: "ProximaNova-Semibold";
+}
+
+.reg-content {
+    margin-top: 7%;
+    margin-left: 6%;
+    margin-right: 6%;
+    font-family: "ProximaNova-Semibold";
+}
+
+ion-button {
+    color: #FFFFFF;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: 60px;
+    outline-color: #FFFFFF;
+}
+
+.reg-label {
+    font-size: 1.3pc;
+}
+
+.reg-input {
+    margin-top: 4%;
+    padding: 3%;
+    font-size: 1pc;
+}
+
+ion-input.reg-input{
+    border: 1.5px solid #8c8d8d67;
+    border-radius: 5px;
+    --placeholder-font-style: "ProximaNova-Regular";
+    --padding-start: 4%;
+ }
+
+ ion-datetime{
+    border: 1.5px solid #8c8d8d67;
+    border-radius: 5px;
+    --placeholder-font-style: "ProximaNova-Regular";
+    --padding-start: 4%;
+ }

@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="primary" style="padding-top: 13px;">
+    <ion-buttons slot="end" style="padding-top: 13px; padding-right: 5%" [routerLink]="['/doctor-list']">
+      <ion-icon name="ellipsis-horizontal" style="font-size: 7vw;"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start" style="padding-top: 13px;">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-top: 5%; padding-bottom: 3%; text-align: center;">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div>
+      <ion-avatar class="img-wrapper">
+        <ion-img src="data:image/jpeg; base64,{{profile.Base64Photo}}"></ion-img>
+      </ion-avatar>
+    </div>
+    <div style="margin-right: 7%; margin-left: 7%;">
+      <ion-card>
+        <ion-card-header>
+          <ion-text class="profile-primary">Full name</ion-text>
+          <ion-text class="profile">{{profile.FullName}}</ion-text>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-text class="profile-primary">Birthdate</ion-text>
+          <ion-text class="profile">{{profile.Birthday | date}}</ion-text>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-text class="profile-primary">Address</ion-text>
+          <ion-text class="profile">{{profile.Address}}</ion-text>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-text class="profile-primary">Phone</ion-text>
+          <ion-text class="profile">{{profile.Phone}}</ion-text>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div>
+      <ion-button shape="round" style="margin-top: 8%; margin-bottom: 8%;" fill="outline" color="primary" expand="full" (click)="logout()">Logout</ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar color="light">
+      <ion-tab-button [routerLink]="['/homescreen']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/request']">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger"></ion-badge>
+        <ion-label>Notification</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button>
+        <ion-icon name="none"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button>
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+        <ion-label>Schedule</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button selected="true" [routerLink]="['/profile']">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

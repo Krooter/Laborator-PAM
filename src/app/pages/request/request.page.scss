@@ -1,0 +1,122 @@
+.img-wrapper {
+    margin-top: 9%;
+    width: 41%;
+    height: fit-content;
+    position: absolute;
+    margin-left: 29%;
+}
+
+.approve-text1 {
+    margin-top: 60%;
+    font-size: 1.3pc;
+    text-align: center;
+    font-family: "ProximaNova-Regular";
+}
+
+.approve-text2 {
+    margin-top: 1%;
+    font-size: 1.3pc;
+    text-align: center;
+    font-family: "ProximaNova-Regular";
+}
+
+.content {
+    margin-top: 7%;
+    margin-left: 6%;
+    margin-right: 6%;
+    font-family: "ProximaNova-Regular";
+    text-align: center;
+    color: #ADBCC3;
+}
+
+.req-text {
+    color: #07DA5F;
+    margin-top: 10%;
+    margin-left: 6%;
+    font-family: "ProximaNova-Regular";
+    font-size: 1.3pc;
+}
+
+.field-primary {
+    margin-left: 6%;
+    font-size: 1.3pc;
+    font-family: "ProximaNova-Regular";
+}
+
+.field-secondary {
+    margin-left: 6%;
+    color: #ADBCC3;
+    font-size: 1.3pc;
+    font-family: "ProximaNova-Regular";
+}
+
+.doctor {
+    margin-top: 11%;
+    color: #07DA5F;
+    margin-left: 6%;
+    font-family: "ProximaNova-Regular";
+    font-size: 1.3pc;
+}
+
+.doctor-thumbnail{
+    border: 1.5px solid #8c8d8d67;
+    margin-top: 5%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.doctor-img {
+    width: 100%;
+    padding: 7%;
+}
+
+.doctor-text-primary{
+    margin-top: 1%;
+    margin-left: 2%;
+    font-family: "ProximaNova-Regular";
+    font-size: 1.2pc;
+}
+
+.doctor-text-secondary {
+    color: #07DA5F;
+    margin-top: 1%;
+    margin-left: 2%;
+    font-family: "ProximaNova-Regular";
+    font-size: 1.1pc;
+}
+
+.doctor-text-stars {
+    margin-top: 1%;
+    margin-left: 1%;
+    font-size: 1.2pc;
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: #FFD500;
+    padding: 1%;
+}
+
+.star-rating {
+    color: #ADBCC3;
+    font-family: "ProximaNova-Regular";
+    margin-left: 3%;
+    text-align: inherit;
+}
+
+.urgent-text {
+    color: #FFFFFF;
+    font-size: 1pc;
+    font-family: 'HelveticaNeueBold';
+    text-align: center !important;
+}
+
+ion-button {
+    color: #FFFFFF;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: 60px;
+    outline-color: #FFFFFF;
+}

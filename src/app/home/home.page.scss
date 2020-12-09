@@ -25,3 +25,43 @@
 #container a {
   text-decoration: none;
 }
+
+ion-content {
+  --background: url('/assets/images/background.png');
+}
+
+ion-button {
+  color: #FFFFFF;
+  align-items: center;
+  padding-left: 7%;
+  padding-right: 7%;
+  height: 60px;
+  outline-color: #FFFFFF;
+}
+
+.welcome-text {
+  padding-top: 40%;
+  color: #FFFFFF;
+  font-size: 2pc;
+  font-family: 'HelveticaNeue';
+
+  text-align: center !important;
+}
+
+.urgent-text {
+  padding-top: 14%;
+  color: #FFFFFF;
+  font-size: 1pc;
+  font-family: 'HelveticaNeueBold';
+  text-align: center !important;
+}
+
+.info-text {
+  padding-top: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
+  color: #FFFFFF;
+  font-size: 1pc;
+  font-family: 'HelveticaNeue';
+  text-align: center !important;
+}

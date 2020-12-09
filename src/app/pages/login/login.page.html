@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="welcome-text">Telemedicine</div>
+
+<form #loginForm="ngForm" (ngSubmit)="login()">
+  <div class="input" style="margin-top: 25%;">
+    <ion-input name="Email" placeholder="Email Address" [(ngModel)]="model.Email"><ion-icon name="person-outline" style="padding: 10px; font-size: 2pc;"></ion-icon></ion-input>
+  </div>
+  
+  <div class="input" style="margin-top: 10%;">
+    <ion-input name="Password" placeholder="Password" type="password" [(ngModel)]="model.Password"><ion-icon name="lock-closed-outline" style="padding: 10px; font-size: 2pc;"></ion-icon></ion-input>
+  </div>
+  
+  <ion-button shape="round" style="margin-top: 10%;" color="light" expand="full" type="submit">Login</ion-button>
+</form>
+
+<p style="margin-bottom: 20%;"></p>
+
+<ion-button shape="round" class="urgent-text" style="margin-top: 10%;" color="light" fill="clear" expand="full" [routerLink]="['/register']">Register</ion-button>
+
+</ion-content>

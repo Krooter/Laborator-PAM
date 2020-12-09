@@ -1,0 +1,212 @@
+<ion-header>
+  <ion-toolbar color="primary" style="padding-top: 13px;">
+    <ion-buttons slot="end" style="padding-top: 13px; padding-right: 5%" [routerLink]="['/doctor-list']">
+      <ion-icon name="ellipsis-horizontal" style="font-size: 7vw;"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start" style="padding-top: 13px;">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-top: 5%; padding-bottom: 3%; text-align: center;">Notification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-thumbnail *ngIf="isAccepted" class="img-wrapper">
+    <ion-img src="../../assets/images/illustration.png"></ion-img>
+  </ion-thumbnail>
+  <div *ngIf="isAccepted">
+    <div>
+      <div class="approve-text1">
+        Your Request Has Been
+      </div>
+      <div class="approve-text2">
+        Approved
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, t. Ut enim ad minim venia m, quis nostrud exercitation ullamco
+      </div>
+      <div class="req-text">
+        Request details
+      </div>
+      <div class="field-primary" style="margin-top: 6%;">
+        Name
+      </div>
+      <div class="field-secondary" style="margin-top: 1%;">
+        {{consultation?.Name}}
+      </div>
+      <div class="field-primary" style="margin-top: 5%;">
+        Disease
+      </div>
+      <div class="field-secondary" style="margin-top: 1%;">
+        {{consultation?.Disease}}
+      </div>
+      <div class="field-primary" style="margin-top: 5%;">
+        Location
+      </div>
+      <div class="field-secondary" style="margin-top: 1%;">
+        {{consultation?.Address}}
+      </div>
+      <div class="field-primary" style="margin-top: 5%;">
+        Description
+      </div>
+      <div class="field-secondary" style="margin-top: 1%;">
+        {{consultation?.Descritpion}}
+      </div>
+      <div class="doctor">
+        Doctor
+      </div>
+      <div class="doctor-thumbnail">
+        <ion-grid>
+          <ion-row>
+            <ion-col size=3>
+              <ion-img class="doctor-img" src="data:image/jpeg;base64,{{doctor?.Photo}}"></ion-img>
+            </ion-col>
+            <ion-col size=9>
+              <div class="doctor-text-primary">
+                {{doctor?.FullName}}
+              </div>
+              <div class="doctor-text-secondary">
+                {{doctor?.Specs}}
+              </div> 
+              <div class="doctor-text-stars">
+
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 4.7">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars < 4.7 && doctor.Stars > 4.3">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star-half"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars <= 4.3 && doctor.Stars >= 3.7">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 3.4 && doctor.Stars < 3.7">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="half-star"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 2.7 && doctor.Stars < 3.4">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 2.4 && doctor.Stars < 2.7">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star-half"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 1.7 && doctor.Stars < 2.4">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 1.4 && doctor.Stars < 1.7">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars" name="star-half"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 0.7 && doctor < 1.4">
+                  <ion-icon class="stars" name="star"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars >= 0.4 && doctor < 0.7">
+                  <ion-icon class="stars" name="star-half"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+                <div class="doctor-text-stars" *ngIf="doctor.Stars <= 0.3">
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <ion-icon class="stars-2" name="star-outline"></ion-icon>
+                  <a class="star-rating">{{doctor.Stars}}</a>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+    <ion-button shape="round" style="margin-top: 10%;" color="primary" expand="full"  (click)="confirm()">Confirm</ion-button>
+    <ion-button shape="round" style="margin-top: 6%; margin-bottom: 6%;" color="medium" fill="outline" expand="full" (click)="confirm()">Cancel Request</ion-button>
+  </div>
+  <div>
+    <div *ngIf="isAccepted == false" class="approve-text2" style="margin-top: 65%;">
+      There are no request to be approved.
+    </div>
+  </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="light">
+      <ion-tab-button [routerLink]="['/homescreen']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button selected="true" [routerLink]="['/request']">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger"></ion-badge>
+        <ion-label>Notification</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button >
+        <ion-icon name="none"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button >
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+        <ion-label>Schedule</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/profile']">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

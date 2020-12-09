@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary" style="padding-top: 13px;">
+    <ion-buttons slot="end" style="padding-top: 13px; padding-right: 5%" [routerLink]="['/doctor-list']">
+      <ion-icon name="ellipsis-horizontal" style="font-size: 7vw;"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start" style="padding-top: 13px;">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-top: 5%; padding-bottom: 3%; text-align: center;">Doctor List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of doctorList" [routerLink]="['/', 'contacts', item.DocId]">
+    <div class="doctor-thumbnail">
+      <ion-grid>
+        <ion-row>
+          <ion-col size=3>
+            <ion-avatar class="doctor-img" >
+              <img src="data:image/jpeg;base64,{{item.Photo}}" width="100%" height="100%" alt="Image"/>
+            </ion-avatar>
+          </ion-col>
+          <ion-col size=9>
+            <div class="doctor-text-primary">
+              {{item.FullName}}
+              <ion-icon slot="end" class="stars" style="margin-left: 3%;" name="star"></ion-icon>
+              <a class="star-rating">{{item.Stars}}</a>
+            </div>
+            <div class="doctor-text-secondary">
+              {{item.Specs}}
+            </div>
+            <div class="light-text">
+              <ion-icon name="location-outline" style="font-size: 1.5pc;"></ion-icon>
+              {{item.Address}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="light">
+      <ion-tab-button [routerLink]="['/homescreen']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/request']">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger"></ion-badge>
+        <ion-label>Notification</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button  >
+        <ion-icon name="none"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button >
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+        <ion-label>Schedule</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/profile']">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
