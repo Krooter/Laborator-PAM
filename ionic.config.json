@@ -1,0 +1,7 @@
+{
+  "name": "PAM",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
